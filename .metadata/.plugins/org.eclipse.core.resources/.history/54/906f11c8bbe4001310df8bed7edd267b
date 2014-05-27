@@ -1,0 +1,15 @@
+package com.example.iitb;
+
+import java.util.ArrayList;
+
+import android.content.ClipData.Item;
+import android.widget.ArrayAdapter;
+
+public class CustomGridViewAdapter extends ArrayAdapter<Item>{
+
+	public CustomGridViewAdapter(SubjectGrid subjectGrid, int rowItem,
+			ArrayList<Item> gridArray) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

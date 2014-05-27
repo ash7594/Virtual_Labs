@@ -1,0 +1,27 @@
+package com.example.iitb;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+
+public class Main extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        
+        Class ourClass;
+		try {
+			ourClass = Class.forName("com.example.iitb.SubjectGrid");
+			Intent tosubjectclass = new Intent(Main.this, ourClass);
+	        startActivity(tosubjectclass);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+    }
+}

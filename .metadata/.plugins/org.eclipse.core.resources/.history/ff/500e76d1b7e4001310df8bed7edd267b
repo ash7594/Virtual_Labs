@@ -1,0 +1,27 @@
+package com.example.iitb;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.content.ClipData.Item;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.GridView;
+
+public class SubjectGrid extends Activity{
+	
+	ArrayList<Item> gridArray = new ArrayList<Item>();
+	private GridView gridview;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.subject_grid);
+		
+		gridview = (GridView) findViewById(R.id.gv);
+		gridview.setMinimumHeight(gridview.getColumnWidth());
+		
+	}
+
+}

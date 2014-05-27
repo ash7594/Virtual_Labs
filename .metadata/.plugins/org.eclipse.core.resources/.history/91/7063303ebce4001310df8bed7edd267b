@@ -1,0 +1,51 @@
+package com.example.iitb;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.content.ClipData.Item;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.GridView;
+import android.widget.Toast;
+
+public class SubjectGrid extends Activity{
+	
+	ArrayList<Item> gridArray = new ArrayList<Item>();
+	GridView gridview;
+	CustomGridViewAdapter customGridAdapter;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.subject_grid);
+		
+		gridArray.add(new Item(homeIcon,"Home"));
+		gridArray.add(new Item(userIcon,"User"));
+		gridArray.add(new Item(homeIcon,"House"));
+		gridArray.add(new Item(userIcon,"Friend"));
+		gridArray.add(new Item(homeIcon,"Home"));
+		gridArray.add(new Item(userIcon,"Personal"));
+		gridArray.add(new Item(homeIcon,"Home"));
+		gridArray.add(new Item(userIcon,"User"));
+		gridArray.add(new Item(homeIcon,"Building"));
+		gridArray.add(new Item(userIcon,"User"));
+		gridArray.add(new Item(homeIcon,"Home"));
+		gridArray.add(new Item(userIcon,"xyz"));
+
+		gridview = (GridView) findViewById(R.id.gv);
+		
+		customGridAdapter = new CustomGridViewAdapter(this, R.layout.row_item, gridArray);
+		gridview.setAdapter(customGridAdapter);
+		  
+		gridview.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View v, int position,long arg3) {
+				Toast.makeText(getApplicationContext(),gridArray.get(position).getTitle(), Toast.LENGTH_SHORT).show();    
+			}
+		});
+	}
+}
+	
